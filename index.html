@@ -1,4 +1,218 @@
-<audio controls>
-    <source src="https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/b.m4a" type="audio/m4a">
-    Your browser does not support the audio element.
-</audio>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taiwanese Phonetic Consonant Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 10px;
+        }
+        td {
+            cursor: pointer;
+            position: relative;
+        }
+        .header {
+            background-color: #f2f2f2;
+        }
+        .place {
+            font-weight: bold;
+            background-color: #e0e0e0;
+            width: 80px;
+        }
+        .sound-details {
+            display: block;
+            font-size: 16px;
+            color: blue;
+        }
+        .english {
+            color: red;
+            font-size: 14px;
+        }
+        .pinyin {
+            color: orange;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Taiwanese Phonetic Consonant Chart</h2>
+
+<table>
+    <tr class="header">
+        <th>分类</th>
+        <th>清</th>
+        <th>气</th>
+        <th>鼻</th>
+        <th>浊</th>
+    </tr>
+    <tr>
+        <td class="place">唇</td>
+        <td data-sound="p">
+            p<br>
+            <span class="sound-details">ㄅ <span class="english">p</span> <span class="pinyin">b</span></span>
+        </td>
+        <td data-sound="ph">
+            ph<br>
+            <span class="sound-details">ㄆ <span class="english">ph</span> <span class="pinyin">p</span></span>
+        </td>
+        <td data-sound="m">
+            m<br>
+            <span class="sound-details">ㄇ <span class="english">m</span> <span class="pinyin">m</span></span>
+        </td>
+        <td data-sound="b">
+            b<br>
+            
+        </td>
+    </tr>
+    <tr>
+        <td class="place">舌尖</td>
+        <td data-sound="t">
+            t<br>
+            <span class="sound-details">ㄉ <span class="english">t</span> <span class="pinyin">t</span></span>
+        </td>
+        <td data-sound="th">
+            th<br>
+            <span class="sound-details">ㄊ <span class="english">th</span> <span class="pinyin">n</span></span>
+        </td>
+        <td data-sound="n">
+            n<br>
+            <span class="sound-details">ㄋ <span class="english">n</span> <span class="pinyin">n</span></span>
+        </td>
+        <td data-sound="l">
+            l<br>
+            <span class="sound-details">ㄌ <span class="english">l</span> <span class="pinyin">l</span></span>
+        </td>
+    </tr>
+    <tr>
+        <td class="place">舌根</td>
+        <td data-sound="k">
+            k<br>
+            <span class="sound-details">ㄍ <span class="english">k</span> <span class="pinyin">g</span></span>
+        </td>
+        <td data-sound="kh">
+            kh<br>
+            <span class="sound-details">ㄎ <span class="english">kh</span> <span class="pinyin">k</span></span>
+        </td>
+        <td data-sound="ng">
+            ng<br>
+            <span class="sound-details">ㄫ <span class="english">ng</span> <span class="pinyin">ng</span></span>
+        </td>
+        <td data-sound="g">
+            g<br>
+           
+        </td>
+    </tr>
+    <tr>
+        <td class="place" rowspan="2">齿</td>
+        <td data-sound="ts">
+            ts<br>
+            <span class="sound-details">ㄗ <span class="english">ts</span> <span class="pinyin">zi</span></span>
+        </td>
+        <td data-sound="tsh">
+            tsh<br>
+            <span class="sound-details">ㄘ <span class="english">tsh</span> <span class="pinyin">ci</span></span>
+        </td>
+        <td data-sound="s">
+            s<br>
+            <span class="sound-details">ㄙ <span class="english">s</span> <span class="pinyin">si</span></span>
+        </td>
+        <td data-sound="j">
+            j<br>
+            
+        </td>
+    </tr>
+    <tr>
+        <td data-sound="tsi">
+            tsi<br>
+            <span class="sound-details">ㄐ <span class="english">tsi</span> <span class="pinyin">ji</span></span>
+        </td>
+        <td data-sound="tshi">
+            tshi<br>
+            <span class="sound-details">ㄑ <span class="english">tshi</span> <span class="pinyin">qi</span></span>
+        </td>
+        <td data-sound="si">
+            si<br>
+            <span class="sound-details">ㄒ <span class="english">si</span> <span class="pinyin">xi</span></span>
+        </td>
+        <td data-sound="ji">
+            ji<br>
+            
+        </td>
+    </tr>
+    <tr>
+        <td class="place">喉</td>
+        <td data-sound="h">
+            h<br>
+            <span class="sound-details">ㄏ <span class="english">h</span> <span class="pinyin">h</span></span>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<!-- Checkbox to toggle between hover-to-play and click-to-play modes -->
+<label>
+    <input type="checkbox" id="hoverPlay" checked> Hover to play sound
+</label>
+
+<script>
+    // Sound mappings for each phonetic symbol hosted on GitHub
+    const sounds = {
+        "p": "https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/p.mp3",
+        "ph": "https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/ph.mp3",
+        "m": "https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/m.mp3",
+        "b": "https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/b.mp3",
+        "t": "https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/t.mp3",
+        "th": "https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/th.mp3",
+        "n": "https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/n.mp3",
+        "l": "https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/l.mp3",
+        "k": "https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/k.mp3",
+        "kh": "https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/kh.mp3",
+        "ng": "https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/ng.mp3",
+        "g": "https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/g.mp3",
+        "ts": "https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/ts.mp3",
+        "tsh": "https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/tsh.mp3",
+        "s": "https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/s.mp3",
+        "tsi": "https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/tsi.mp3",
+        "tshi": "https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/tshi.mp3",
+        "si": "https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/si.mp3",
+        "ji": "https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/ji.mp3",
+        "j": "https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/j.mp3",
+        "h": "https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/h.mp3"
+    };
+
+    function playSound(sound) {
+        const audio = new Audio(sounds[sound]);
+        audio.play().catch((error) => {
+            console.error("Audio failed to play: ", error);
+        });
+    }
+
+    document.querySelectorAll('td[data-sound]').forEach(function(td) {
+        td.addEventListener('click', function() {
+            if (!document.getElementById('hoverPlay').checked) {
+                const sound = this.getAttribute('data-sound');
+                playSound(sound);
+            }
+        });
+
+        td.addEventListener('mouseover', function() {
+            if (document.getElementById('hoverPlay').checked) {
+                const sound = this.getAttribute('data-sound');
+                playSound(sound);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
