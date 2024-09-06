@@ -29,15 +29,20 @@
         .sound-details {
             display: block;
             font-size: 16px;
-            color: blue;
-        }
-        .english {
-            color: red;
-            font-size: 14px;
+            color: blue; /* Zhuyin Fuhao */
         }
         .pinyin {
-            color: orange;
+            color: orange; /* Pinyin */
             font-size: 14px;
+        }
+        .note {
+            margin-top: 20px;
+            font-size: 14px;
+            font-style: italic;
+        }
+        .hover-note {
+            font-size: 14px;
+            margin-left: 10px;
         }
     </style>
 </head>
@@ -57,15 +62,15 @@
         <td class="place">唇</td>
         <td data-sound="p">
             p<br>
-            <span class="sound-details">ㄅ <span class="english">p</span> <span class="pinyin">b</span></span>
+            <span class="sound-details">ㄅ <span class="pinyin">b</span></span>
         </td>
         <td data-sound="ph">
             ph<br>
-            <span class="sound-details">ㄆ <span class="english">ph</span> <span class="pinyin">p</span></span>
+            <span class="sound-details">ㄆ <span class="pinyin">p</span></span>
         </td>
         <td data-sound="m">
             m<br>
-            <span class="sound-details">ㄇ <span class="english">m</span> <span class="pinyin">m</span></span>
+            <span class="sound-details">ㄇ <span class="pinyin">m</span></span>
         </td>
         <td data-sound="b">
             b<br>
@@ -76,34 +81,34 @@
         <td class="place">舌尖</td>
         <td data-sound="t">
             t<br>
-            <span class="sound-details">ㄉ <span class="english">t</span> <span class="pinyin">t</span></span>
+            <span class="sound-details">ㄉ <span class="pinyin">t</span></span>
         </td>
         <td data-sound="th">
             th<br>
-            <span class="sound-details">ㄊ <span class="english">th</span> <span class="pinyin">n</span></span>
+            <span class="sound-details">ㄊ <span class="pinyin">n</span></span>
         </td>
         <td data-sound="n">
             n<br>
-            <span class="sound-details">ㄋ <span class="english">n</span> <span class="pinyin">n</span></span>
+            <span class="sound-details">ㄋ <span class="pinyin">n</span></span>
         </td>
         <td data-sound="l">
             l<br>
-            <span class="sound-details">ㄌ <span class="english">l</span> <span class="pinyin">l</span></span>
+            <span class="sound-details">ㄌ <span class="pinyin">l</span></span>
         </td>
     </tr>
     <tr>
         <td class="place">舌根</td>
         <td data-sound="k">
             k<br>
-            <span class="sound-details">ㄍ <span class="english">k</span> <span class="pinyin">g</span></span>
+            <span class="sound-details">ㄍ <span class="pinyin">g</span></span>
         </td>
         <td data-sound="kh">
             kh<br>
-            <span class="sound-details">ㄎ <span class="english">kh</span> <span class="pinyin">k</span></span>
+            <span class="sound-details">ㄎ <span class="pinyin">k</span></span>
         </td>
         <td data-sound="ng">
             ng<br>
-            <span class="sound-details">ㄫ <span class="english">ng</span> <span class="pinyin">ng</span></span>
+            <span class="sound-details">ㄫ <span class="pinyin">ng</span></span>
         </td>
         <td data-sound="g">
             g<br>
@@ -114,15 +119,15 @@
         <td class="place" rowspan="2">齿</td>
         <td data-sound="ts">
             ts<br>
-            <span class="sound-details">ㄗ <span class="english">ts</span> <span class="pinyin">zi</span></span>
+            <span class="sound-details">ㄗ <span class="pinyin">zi</span></span>
         </td>
         <td data-sound="tsh">
             tsh<br>
-            <span class="sound-details">ㄘ <span class="english">tsh</span> <span class="pinyin">ci</span></span>
+            <span class="sound-details">ㄘ <span class="pinyin">ci</span></span>
         </td>
         <td data-sound="s">
             s<br>
-            <span class="sound-details">ㄙ <span class="english">s</span> <span class="pinyin">si</span></span>
+            <span class="sound-details">ㄙ <span class="pinyin">si</span></span>
         </td>
         <td data-sound="j">
             j<br>
@@ -132,15 +137,15 @@
     <tr>
         <td data-sound="tsi">
             tsi<br>
-            <span class="sound-details">ㄐ <span class="english">tsi</span> <span class="pinyin">ji</span></span>
+            <span class="sound-details">ㄐ <span class="pinyin">tsi</span></span>
         </td>
         <td data-sound="tshi">
             tshi<br>
-            <span class="sound-details">ㄑ <span class="english">tshi</span> <span class="pinyin">qi</span></span>
+            <span class="sound-details">ㄑ <span class="pinyin">qi</span></span>
         </td>
         <td data-sound="si">
             si<br>
-            <span class="sound-details">ㄒ <span class="english">si</span> <span class="pinyin">xi</span></span>
+            <span class="sound-details">ㄒ <span class="pinyin">xi</span></span>
         </td>
         <td data-sound="ji">
             ji<br>
@@ -151,7 +156,7 @@
         <td class="place">喉</td>
         <td data-sound="h">
             h<br>
-            <span class="sound-details">ㄏ <span class="english">h</span> <span class="pinyin">h</span></span>
+            <span class="sound-details">ㄏ <span class="pinyin">h</span></span>
         </td>
         <td></td>
         <td></td>
@@ -159,10 +164,15 @@
     </tr>
 </table>
 
+<!-- Note explaining the orange and blue colors -->
+<div class="note">
+    <p>Note: The orange text represents the equivalent Pinyin sound in Mandarin Chinese, and the blue symbols are Taiwanese Zhuyin Fuhao (Bopomofo).</p>
+</div>
+
 <!-- Checkbox to toggle between hover-to-play and click-to-play modes -->
 <label>
-    <input type="checkbox" id="hoverPlay" checked> Hover to play sound
-</label>
+    <input type="checkbox" id="hoverPlay" checked> Hover to play sound</label>
+    <span class="hover-note">Uncheck to click on the consonant to hear the sound.</span>
 
 <script>
     // Sound mappings for each phonetic symbol hosted on GitHub
@@ -190,11 +200,21 @@
         "h": "https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/h.mp3"
     };
 
+    let isPlaying = false;
+
     function playSound(sound) {
-        const audio = new Audio(sounds[sound]);
-        audio.play().catch((error) => {
-            console.error("Audio failed to play: ", error);
-        });
+        if (!isPlaying) {
+            const audio = new Audio(sounds[sound]);
+            isPlaying = true;
+            audio.play();
+            audio.onended = () => {
+                isPlaying = false;
+            };
+            audio.onerror = () => {
+                isPlaying = false;
+                console.error("Error playing audio for: ", sound);
+            };
+        }
     }
 
     document.querySelectorAll('td[data-sound]').forEach(function(td) {
