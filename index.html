@@ -1,19 +1,94 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audio Test</title>
+    <title>Taiwanese Phonetic Consonant Chart</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 10px;
+        }
+        td {
+            cursor: pointer;
+            position: relative;
+        }
+        .header {
+            background-color: #f2f2f2;
+        }
+        .place {
+            font-weight: bold;
+            background-color: #e0e0e0;
+            width: 80px;
+        }
+        .sound-details {
+            display: block;
+            font-size: 16px;
+            color: blue; /* Zhuyin Fuhao */
+        }
+        .pinyin {
+            color: orange; /* Pinyin */
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
 
-<h2>Test Audio Playback for "p" Sound</h2>
+<h2>Taiwanese Phonetic Consonant Chart</h2>
 
-<!-- This will test one audio file -->
-<audio controls>
-    <source src="https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/p.mp3?raw=true" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
+<table>
+    <tr class="header">
+        <th>分类</th>
+        <th>清</th>
+        <th>气</th>
+        <th>鼻</th>
+        <th>浊</th>
+    </tr>
+    <tr>
+        <td class="place">唇</td>
+        <td data-sound="p">
+            p<br>
+            <span class="sound-details">ㄅ <span class="pinyin">b</span></span>
+        </td>
+        <td data-sound="ph">
+            ph<br>
+            <span class="sound-details">ㄆ <span class="pinyin">p</span></span>
+        </td>
+        <td data-sound="m">
+            m<br>
+            <span class="sound-details">ㄇ <span class="pinyin">m</span></span>
+        </td>
+        <td data-sound="b">
+            b<br>
+        </td>
+    </tr>
+    <!-- Add more rows for other consonants -->
+</table>
+
+<!-- 简单的点击播放功能 -->
+<script>
+    const sounds = {
+        "p": "https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/p.mp3?raw=true",
+        "ph": "https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/ph.mp3?raw=true",
+        "m": "https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/m.mp3?raw=true",
+        "b": "https://raw.githubusercontent.com/33learn/taiwaneseConsonants/main/b.mp3?raw=true"
+        // 继续为其他音频文件添加链接
+    };
+
+    // 点击单元格时播放音频
+    document.querySelectorAll('td[data-sound]').forEach(function(td) {
+        td.addEventListener('click', function() {
+            const sound = this.getAttribute('data-sound');
+            const audio = new Audio(sounds[sound]);
+            audio.play();
+        });
+    });
+</script>
 
 </body>
 </html>
